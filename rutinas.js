@@ -4,7 +4,7 @@
 const RUTINAS_PREDEFINIDAS = [
     {
         "nombre": "Full Body",
-        "imagen": "imagenes/full-body.png",
+        "imagen": "full-body.png",
         "imagenAlt": "Mujer haciendo peso muerto rumano con mancuernas",
         "subtitulo": "Cuerpo completo en una sesión",
         "descripcion": "Trabajas piernas, pecho, espalda, hombros y abdomen dentro del mismo entrenamiento. Es una forma sencilla de conocer los movimientos principales y llevar un registro de todo el cuerpo.",
@@ -62,7 +62,7 @@ const RUTINAS_PREDEFINIDAS = [
     },
     {
         "nombre": "PPL",
-        "imagen": "imagenes/ppl.png",
+        "imagen": "ppl.png",
         "imagenAlt": "Tres ejercicios: press de pecho, remo en polea y sentadilla",
         "subtitulo": "Push / Pull / Legs · Empuje, jalón y piernas",
         "descripcion": "Divide los ejercicios en tres tipos de sesión. Push trabaja movimientos de empuje para pecho, hombros y tríceps; Pull reúne jalones para espalda y bíceps; Legs se concentra en piernas, glúteos y pantorrillas. Cada botón carga solo la sesión elegida.",
@@ -181,7 +181,7 @@ const RUTINAS_PREDEFINIDAS = [
     },
     {
         "nombre": "Upper / Lower",
-        "imagen": "imagenes/upper-lower.png",
+       "imagen": "upper-lower.png",
         "imagenAlt": "Press de hombros con mancuernas y sentadilla con barra",
         "subtitulo": "Tren superior / Tren inferior",
         "descripcion": "Alterna una sesión de torso y brazos con otra de piernas y abdomen. En Upper entrenas pecho, espalda, hombros y brazos; en Lower trabajas piernas, glúteos, pantorrillas y abdomen.",
