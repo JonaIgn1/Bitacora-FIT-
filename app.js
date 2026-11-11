@@ -436,13 +436,7 @@ function crearTarjetaRutina(rutina) {
     const columna = crear('div', 'col-12 col-lg-4');
     const tarjeta = crear('article', 'card bg-body-tertiary border-secondary h-100');
 
-    const portada = crear('img', 'card-img-top img-fluid');
-    portada.src = rutina.imagen;
-    portada.alt = rutina.imagenAlt;
-    portada.width = 1536;
-    portada.height = 1024;
-    portada.loading = 'lazy';
-    portada.decoding = 'async';
+    
 
     const contenido = crear('div', 'card-body d-flex flex-column p-4');
     contenido.append(
@@ -461,7 +455,7 @@ function crearTarjetaRutina(rutina) {
     const pie = crear('div', 'card-footer p-4');
     pie.append(sesionesRutina);
 
-    tarjeta.append(portada, contenido, pie);
+    tarjeta.append(contenido, pie);
     columna.append(tarjeta);
     return columna;
 }
