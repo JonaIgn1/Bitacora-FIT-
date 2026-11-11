@@ -1,239 +1,224 @@
 <!DOCTYPE html>
-<html data-bs-theme="dark" lang="es">
-    <head>
-        <meta charset="utf-8"/>
-        <meta content="width=device-width, initial-scale=1" name="viewport"/>
-        <title>
-            RegistroFit · Bitácora de entrenamiento
-        </title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-        <script defer="" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-        </script>
-        <script defer="" src="rutinas.js">
-        </script>
-        <script defer="" src="app.js">
-        </script>
-    </head>
-    <body class="bg-dark text-light">
-        <a class="visually-hidden-focusable btn btn-light" href="#principal">
-            Saltar al contenido
-        </a>
-        <nav aria-label="Navegación principal" class="navbar navbar-expand-lg bg-body-tertiary border-bottom border-secondary">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="#principal">
-                    Registro
-                    <span class="text-info">
-                        Fit
-                    </span>
-                </a>
-                <button aria-controls="menu" aria-expanded="false" aria-label="Abrir navegación" class="navbar-toggler" data-bs-target="#menu" data-bs-toggle="collapse" type="button">
-                    <span class="navbar-toggler-icon">
-                    </span>
-                </button>
-                <div class="collapse navbar-collapse" id="menu">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#predefinidas">
-                                Rutinas predefinidas
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#sesion">
-                                Registrar sesión
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#historial">
-                                Historial
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#respaldos">
-                                Rutinas y respaldos
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="RegistroFit: bitácora de entrenamiento para registrar tus sesiones, ejercicios y progreso. Tus datos se guardan en tu navegador.">
+    <meta name="theme-color" content="#212529">
+    <title>RegistroFit · Bitácora de entrenamiento</title>
+
+    <!-- Abre la conexión al CDN antes de pedir los archivos -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+
+    <script defer src="rutinas.js"></script>
+    <script defer src="app.js"></script>
+    <script defer
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <a class="visually-hidden-focusable btn btn-light" href="#principal">Saltar al contenido</a>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom border-secondary" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#principal">Registro<span class="text-info">Fit</span></a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Abrir navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#predefinidas">Rutinas predefinidas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sesion">Registrar sesión</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#historial">Historial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#respaldos">Rutinas y respaldos</a></li>
+                </ul>
             </div>
-        </nav>
-        <main class="container py-4 py-lg-5" id="principal">
-            <div class="row mb-4">
-                <div class="col-12 col-lg-8">
-                    <p class="text-info text-uppercase fw-semibold mb-2">
-                        Tu constancia, en un solo lugar
-                    </p>
-                    <h1 class="display-5 fw-bold">
-                        Bitácora de entrenamiento
-                    </h1>
-                    <p class="text-body-secondary lead">
-                        Organiza tus ejercicios y lleva el registro de cada sesión.
-                    </p>
-                </div>
-                <div class="col-12 col-lg-4 d-flex align-items-center justify-content-lg-end">
-                    <p class="border border-secondary rounded p-3 mb-0">
-                        <strong class="fs-3 text-info" id="total">
-                            0
-                        </strong>
-                        sesiones registradas
-                    </p>
-                </div>
+        </div>
+    </nav>
+
+    <main class="container py-4 py-lg-5" id="principal">
+        <noscript>
+            <div class="alert alert-warning">RegistroFit necesita JavaScript activado para funcionar.</div>
+        </noscript>
+
+        <header class="row mb-4">
+            <div class="col-12 col-lg-8">
+                <p class="text-info text-uppercase fw-semibold mb-2">Tu constancia, en un solo lugar</p>
+                <h1 class="display-5 fw-bold">Bitácora de entrenamiento</h1>
+                <p class="text-body-secondary lead">Organiza tus ejercicios y lleva el registro de cada sesión.</p>
             </div>
-            <div aria-live="polite" class="alert d-none" id="aviso" role="status">
+            <div class="col-12 col-lg-4 d-flex align-items-center justify-content-lg-end">
+                <p class="border border-secondary rounded p-3 mb-0">
+                    <strong class="fs-3 text-info" id="total">0</strong>
+                    sesiones registradas
+                </p>
             </div>
-            <section id="predefinidas" class="mb-5" aria-labelledby="titulo-rutinas">
-                <div class="row mb-3">
-                    <div class="col-12">
-                        <h2 id="titulo-rutinas" class="h3">
-                            Rutinas predefinidas
-                        </h2>
-                        <p class="text-body-secondary">
-                            ¿No sabes por dónde empezar? Conoce estas distribuciones y abre
-                            una sesión de ejemplo para revisar sus ejercicios antes de cargarla.
+        </header>
+
+        <div class="alert d-none" id="aviso" role="status" aria-live="polite"></div>
+
+        <!-- Rutinas predefinidas (las tarjetas se generan desde rutinas.js) -->
+        <section class="mb-5" id="predefinidas" aria-labelledby="titulo-rutinas">
+            <h2 class="h3" id="titulo-rutinas">Rutinas predefinidas</h2>
+            <p class="text-body-secondary">
+                ¿No sabes por dónde empezar? Conoce estas distribuciones y abre una sesión de ejemplo
+                para revisar sus ejercicios antes de cargarla.
+            </p>
+            <p class="small text-body-secondary">
+                Son plantillas editables, con 2 series de 12 repeticiones como ejemplo. Elige una carga que
+                puedas controlar y aprende la técnica antes de aumentarla. Al cargar, el peso queda vacío para
+                que registres el que realmente utilizaste; escribe 0 si no usaste carga externa. Guardar
+                registra únicamente la sesión elegida.
+            </p>
+            <p class="small text-body-secondary">
+                La constancia y trabajar los principales grupos musculares son más importantes que elegir
+                una división específica.
+            </p>
+            <div class="row g-3" id="catalogo-rutinas"></div>
+        </section>
+
+        <div class="row g-4">
+            <!-- Formulario -->
+            <div class="col-12 col-lg-5">
+                <section class="card bg-body-tertiary border-secondary" id="sesion" aria-labelledby="titulo-form">
+                    <div class="card-body p-4">
+                        <p class="text-info small fw-bold">01 / REGISTRA</p>
+                        <h2 class="h4" id="titulo-form">Nuevo entrenamiento</h2>
+                        <p class="text-body-secondary small">
+                            Agrega todos los ejercicios que hiciste en la misma sesión. El peso se registra en kg;
+                            usa 0 para ejercicios sin carga.
                         </p>
-                        <p class="small text-body-secondary">
-                            Son plantillas editables, con 2 series de 12 repeticiones como ejemplo.
-                            Elige una carga que puedas controlar y aprende la técnica antes de aumentarla.
-                            Al cargar, el peso queda vacío para que registres el que realmente utilizaste;
-                            escribe 0 si no usaste carga externa. Guardar registra únicamente la sesión elegida.
+
+                        <form id="formulario">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="form-label" for="nombre">Nombre de la rutina</label>
+                                    <input class="form-control" id="nombre" maxlength="80"
+                                           placeholder="Ej. Empuje · Pecho y tríceps" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label" for="fecha">Fecha del entrenamiento</label>
+                                    <input class="form-control" id="fecha" type="date"
+                                           min="1900-01-01" max="2100-12-31" required>
+                                </div>
+                            </div>
+
+                            <fieldset class="mt-4">
+                                <legend class="h5">Ejercicios</legend>
+                                <div id="ejercicios"></div>
+                                <button class="btn btn-outline-info w-100" id="agregar" type="button">+ Agregar ejercicio</button>
+                            </fieldset>
+
+                            <div class="mt-3">
+                                <label class="form-label" for="notas">
+                                    Notas <span class="text-body-secondary">(opcional)</span>
+                                </label>
+                                <textarea class="form-control" id="notas" rows="2" maxlength="1000"
+                                          placeholder="Cómo te sentiste, ajustes o comentarios"></textarea>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2 mt-4">
+                                <button class="btn btn-info fw-semibold" id="guardar" type="submit">Guardar entrenamiento</button>
+                                <button class="btn btn-outline-light" id="limpiar" type="button">Limpiar / cancelar</button>
+                                <button class="btn btn-outline-info" id="descargar-rutina" type="button">Descargar rutina</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Historial y respaldos -->
+            <div class="col-12 col-lg-7">
+                <section id="historial" aria-labelledby="titulo-historial">
+                    <p class="text-info small fw-bold">02 / CONSULTA</p>
+                    <h2 class="h4" id="titulo-historial">Historial de sesiones</h2>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="filtro">Grupo muscular</label>
+                            <select class="form-select" id="filtro">
+                                <option value="">Todos los músculos</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <label class="form-label" for="busqueda">Buscar rutina o ejercicio</label>
+                            <input class="form-control" id="busqueda" type="search" placeholder="Ej. Sentadilla">
+                        </div>
+                    </div>
+
+                    <p class="small text-body-secondary" id="resultados" aria-live="polite"></p>
+                    <div class="d-grid gap-3" id="lista"></div>
+                </section>
+
+                <section class="card bg-body-tertiary border-secondary mt-4" id="respaldos" aria-labelledby="titulo-respaldos">
+                    <div class="card-body p-4">
+                        <p class="text-info small fw-bold">03 / CONSERVA</p>
+                        <h2 class="h4" id="titulo-respaldos">Rutinas y respaldos</h2>
+                        <p class="text-body-secondary small">
+                            Descarga una rutina desde el formulario o una sesión del historial. Al subirla, podrás
+                            reutilizar sus ejercicios con una nueva fecha. El respaldo completo conserva todas tus
+                            sesiones y fechas.
                         </p>
-                        <p class="small text-body-secondary">
-                            La constancia y trabajar los principales grupos musculares son más
-                            importantes que elegir una división específica.
+                        <button class="btn btn-outline-light" id="respaldo" type="button">Descargar respaldo completo</button>
+
+                        <label class="form-label mt-3" for="archivo">Subir rutina o respaldo (.json)</label>
+                        <input class="form-control" id="archivo" type="file"
+                               accept=".json,application/json" aria-describedby="ayuda-archivo">
+                        <p class="small text-body-secondary mt-2 mb-0" id="ayuda-archivo">
+                            Máximo 2 MB. Las rutinas se cargan en el formulario; los respaldos se combinan con el
+                            historial sin repetir identificadores.
                         </p>
                     </div>
-                </div>
-                <div id="catalogo-rutinas" class="row g-3">
-                </div>
-            </section>
-            <div class="row g-4">
-                <div class="col-12 col-lg-5">
-                    <section class="card bg-body-tertiary border-secondary" id="sesion">
-                        <div class="card-body p-4">
-                            <p class="text-info small fw-bold">
-                                01 / REGISTRA
-                            </p>
-                            <h2 class="h4" id="titulo-form">
-                                Nuevo entrenamiento
-                            </h2>
-                            <p class="text-body-secondary small">
-                                Agrega todos los ejercicios que hiciste en la misma sesión. El peso se registra en kg; usa 0 para ejercicios sin carga.
-                            </p>
-                            <form id="formulario">
-                                <div class="row g-3">
-                                    <div class="col-12">
-                                        <label class="form-label" for="nombre">
-                                            Nombre de la rutina
-                                        </label>
-                                        <input class="form-control" id="nombre" maxlength="80" placeholder="Ej. Empuje · Pecho y tríceps" required=""/>
-                                    </div>
-                                    <div class="col-12">
-                                        <label class="form-label" for="fecha">
-                                            Fecha del entrenamiento
-                                        </label>
-                                        <input class="form-control" id="fecha" max="2100-12-31" min="1900-01-01" required="" type="date"/>
-                                    </div>
-                                </div>
-                                <fieldset class="mt-4">
-                                    <legend class="h5">
-                                        Ejercicios
-                                    </legend>
-                                    <div id="ejercicios">
-                                    </div>
-                                    <button class="btn btn-outline-info w-100" id="agregar" type="button">
-                                        + Agregar ejercicio
-                                    </button>
-                                </fieldset>
-                                <div class="mt-3">
-                                    <label class="form-label" for="notas">
-                                        Notas
-                                        <span class="text-body-secondary">
-                                            (opcional)
-                                        </span>
-                                    </label>
-                                    <textarea class="form-control" id="notas" maxlength="1000" placeholder="Cómo te sentiste, ajustes o comentarios" rows="2"></textarea>
-                                </div>
-                                <div class="d-flex flex-wrap gap-2 mt-4">
-                                    <button class="btn btn-info fw-semibold" id="guardar" type="submit">
-                                        Guardar entrenamiento
-                                    </button>
-                                    <button class="btn btn-outline-light" id="limpiar" type="button">
-                                        Limpiar / cancelar
-                                    </button>
-                                    <button class="btn btn-outline-info" id="descargar-rutina" type="button">
-                                        Descargar rutina
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </section>
-                </div>
-                <div class="col-12 col-lg-7">
-                    <section id="historial">
-                        <p class="text-info small fw-bold">
-                            02 / CONSULTA
-                        </p>
-                        <h2 class="h4">
-                            Historial de sesiones
-                        </h2>
-                        <div class="row g-3 mb-3">
-                            <div class="col-12 col-md-6">
-                                <label class="form-label" for="filtro">
-                                    Grupo muscular
-                                </label>
-                                <select class="form-select" id="filtro">
-                                    <option value="">
-                                        Todos los músculos
-                                    </option>
-                                </select>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <label class="form-label" for="busqueda">
-                                    Buscar rutina o ejercicio
-                                </label>
-                                <input class="form-control" id="busqueda" placeholder="Ej. Sentadilla" type="search"/>
-                            </div>
-                        </div>
-                        <p aria-live="polite" class="small text-body-secondary" id="resultados">
-                        </p>
-                        <div class="d-grid gap-3" id="lista">
-                        </div>
-                    </section>
-                    <section class="card bg-body-tertiary border-secondary mt-4" id="respaldos">
-                        <div class="card-body p-4">
-                            <p class="text-info small fw-bold">
-                                03 / CONSERVA
-                            </p>
-                            <h2 class="h4">
-                                Rutinas y respaldos
-                            </h2>
-                            <p class="text-body-secondary small">
-                                Descarga una rutina desde el formulario o una sesión del historial. Al subirla, podrás reutilizar sus ejercicios con una nueva fecha. El respaldo completo conserva todas tus sesiones y fechas.
-                            </p>
-                            <div class="d-flex gap-2 flex-wrap">
-                                <button class="btn btn-outline-light" id="respaldo" type="button">
-                                    Descargar respaldo completo
-                                </button>
-                            </div>
-                            <label class="form-label mt-3" for="archivo">
-                                Subir rutina o respaldo (.json)
-                            </label>
-                            <input accept=".json,application/json" aria-describedby="ayuda-archivo" class="form-control" id="archivo" type="file"/>
-                            <p class="small text-body-secondary mt-2 mb-0" id="ayuda-archivo">
-                                Máximo 2 MB. Las rutinas se cargan en el formulario; los respaldos se combinan con el historial sin repetir identificadores.
-                            </p>
-                        </div>
-                    </section>
-                </div>
+                </section>
             </div>
-        </main>
-        <footer class="container py-4 border-top border-secondary">
-            <div class="row">
+        </div>
+    </main>
+
+    <footer class="container py-4 border-top border-secondary">
+        <p class="small text-body-secondary mb-0">
+            RegistroFit · Tus datos se guardan en este navegador. Descarga respaldos para conservarlos en otro equipo.
+        </p>
+    </footer>
+
+    <!-- Estructura de un ejercicio del formulario; app.js la clona y le asigna ids únicos -->
+    <template id="plantilla-ejercicio">
+        <div class="border border-secondary rounded p-3 mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="h6 mb-0">Ejercicio</h3>
+                <button class="btn btn-sm btn-outline-light quitar" type="button">Quitar</button>
+            </div>
+            <div class="row g-2">
                 <div class="col-12">
-                    <p class="small text-body-secondary mb-0">
-                        RegistroFit · Tus datos se guardan en este navegador. Descarga respaldos para conservarlos en otro equipo.
-                    </p>
+                    <label class="form-label">Nombre del ejercicio</label>
+                    <input class="form-control" data-campo="nombre" maxlength="80" placeholder="Ej. Press de banca" required>
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Músculo</label>
+                    <select class="form-select" data-campo="musculo" required>
+                        <option value="">Seleccionar músculo</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label class="form-label">Series</label>
+                    <input class="form-control" data-campo="series" type="number" min="1" max="100" step="1" required>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label class="form-label">Repeticiones</label>
+                    <input class="form-control" data-campo="repeticiones" type="number" min="1" max="1000" step="1" required>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label class="form-label">Peso (kg)</label>
+                    <input class="form-control" data-campo="peso" type="number" min="0" max="2000" step="0.01" required>
                 </div>
             </div>
-        </footer>
-    </body>
+        </div>
+    </template>
+</body>
 </html>
